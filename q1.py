@@ -56,7 +56,7 @@ class linear_regression:
             plt.show()
 
     def model_training(self):
-        for i in range(10):
+      for i in range(10):
             model = lr()
             poly=PolynomialFeatures(degree=i)
             x=self.split_train_data_x[i][...,np.newaxis]
@@ -65,12 +65,12 @@ class linear_regression:
             x_test=poly.fit_transform(self.test_data_x[...,np.newaxis])
             model.fit(x_, y)
             predicted_y=model.predict(x_test)
-            plt.plot(self.test_data_x[...,np.newaxis],self.test_data_y[...,np.newaxis],'o')
-            plt.title('X vs Y')
-            plt.xlabel('x')
-            plt.ylabel('y')
-            plt.plot(self.test_data_x,predicted_y.flatten(), 'o', color='black')
-            plt.show()
+#           plt.plot(self.test_data_x[...,np.newaxis],self.test_data_y[...,np.newaxis],'o')
+#           plt.title('X vs Y')
+#           plt.xlabel('x')
+#           plt.ylabel('y')
+#           plt.plot(self.test_data_x,predicted_y.flatten(), 'o', color='black')
+#           plt.show()
             self.bias_variance_calculation(self.test_data_x, self.test_data_y,predicted_y.flatten(),i)
 # ---------------------------Bias Variance-----------------------------------
     def bias_variance_calculation(self, x_test, y_test, y_predicted, j):
